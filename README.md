@@ -1,9 +1,9 @@
 # VMware调节ubuntu分辨率
 
-无法通过设置调节屏幕分辨率，使用xrandr命令调节分辨率：
-xrandr
-永久设置
-xrandr --output Virtual1 --mode 1360x768
+    无法通过设置调节屏幕分辨率，使用xrandr命令调节分辨率：
+    xrandr
+    永久设置
+    xrandr --output Virtual1 --mode 1360x768
 
 # [Linux常用命令大全](Linux常用命令大全.txt)
 
@@ -11,6 +11,7 @@ xrandr --output Virtual1 --mode 1360x768
 
     sudo apt-get install numlockx
     sudo gedit /usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf
+    在文件尾添加：
     greeter-setup-script=/usr/bin/numlockx on
 
 # Ubuntu 配置 sudo 时不需要输入密码
@@ -38,4 +39,4 @@ xrandr --output Virtual1 --mode 1360x768
     nautilus -q
 
 
-#  解压；tar -zxvf   xx.tar.gz
+#  解压.tar.gz文件：tar -zxvf   xx.tar.gz
