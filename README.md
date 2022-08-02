@@ -40,3 +40,13 @@
 
 
 #  解压.tar.gz文件：tar -zxvf   xx.tar.gz
+
+
+# SSH
+
+在linux上使用github：https://www.jianshu.com/p/599ae69b57c5
+    
+    ssh-keygen -t rsa -C "your_email@youremail.com" // ERROR: You're using an RSA key with SHA-1, which is no longer allowed. Please use a newer client or a different key type.
+    ssh-keygen -t ed25519 -C "your_email@example.com"
+
+     cat ~/.ssh/id_rsa.pub
