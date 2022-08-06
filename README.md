@@ -50,3 +50,8 @@
     ssh-keygen -t ed25519 -C "your_email@example.com"
 
      cat ~/.ssh/id_rsa.pub
+     
+ # 在Linux下安装Python时出现一个错误：zipimport.ZipImportError: can't decompress data; zlib not available
+ 
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+
