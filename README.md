@@ -57,6 +57,6 @@ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev li
 
 # python默认版本修改
 
-update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1  
 update-alternatives --install /usr/bin/python python /usr/bin/python3.4 2
 
