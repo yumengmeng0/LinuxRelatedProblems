@@ -40,7 +40,7 @@
 
 
 #  解压.tar.gz文件：tar -zxvf   xx.tar.gz
-
+#   tar -xvf archive.tar.xz
 
 # SSH
 
