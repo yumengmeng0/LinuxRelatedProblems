@@ -71,6 +71,7 @@ export JRE_HOME=${JAVA_HOME}/jre
 export CLASS_PATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
 
+# source /etc/profile 使新的环境变量生效
 ```
 
 
