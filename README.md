@@ -60,3 +60,17 @@ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev li
 update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1  
 update-alternatives --install /usr/bin/python python /usr/bin/python3.4 2
 
+# jdk
+```
+
+# su root
+# vi /etc/profile
+
+export JAVA_HOME=/usr/local/java/jdk-11.0.16.1
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASS_PATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+
+```
+
+
