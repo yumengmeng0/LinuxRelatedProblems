@@ -50,3 +50,115 @@
     ssh-keygen -t ed25519 -C "your_email@example.com"
 
      cat ~/.ssh/id_rsa.pub
+
+
+# Ubuntu安装JDK并配置环境变量
+
+```
+http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+# 解压到当前目录
+> tar -zxvf jdk-8u171-linux-x64.tar.gz 
+# 重命名
+> mv jdk-8u171-linux-x64 jdk1.8
+# 将解压后的文件移动到指定目录
+> mv jdk1.8 /usr/lib/java
+
+## 使用全局设置方法，它是所有用户的共用的环境变量
+sudo gedit ~/.bashrc
+
+然后把如下命令复制到最底部
+
+# export JAVA_HOME=后面要填写自己解压后的jdk的路径
+
+export JAVA_HOME=usr/lib/jvm/jdk-11
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib 
+export PATH=${JAVA_HOME}/bin:$PATH
+
+
+source ~/.bashrc
+
+```
+
+# Ubuntu中查找软件安装位置详解
+
+```
+
+ 
+2020-12-11 网页编程网
+1.执行该程序
+
+
+	直接执行程序，有时候执行时会显示出位置。
+
+
+	尝试使用type，如：type google-chrome
+2.在进程中找
+
+
+	显示所有进程名：
+
+
+	ps -e
+
+
+	过滤命令：
+
+
+	ps aux|grep 软件名
+3.用find或whereis命令（查看软件安装的所有路径）
+
+
+	find / -name filename，直接找的整个硬盘；
+
+
+	locate filename，什么都会找出来；
+
+
+	whereis filename，能找到以前删除的。
+4.which查询运行文件所在路径
+
+
+	如果只查询文件的运行文件所在目录，命令：which google-chrome
+
+
+	结果会显示：
+
+
+	/usr/bin/google-chrome
+5.其他
+
+
+	如果知道使用 apt-get install 命令安装的软件。则：
+
+
+	dpkg -S softwarename 显示包含此软件包的所有位置；
+
+
+	dpkg -L softwarename 显示安装路径。
+
+
+	aptitude show softearename或dpkg -l softwarename查看软件版本。
+
+
+```
+
+# 查看监听端口
+
+```
+# 查看监听端口
+netstat -lunpt
+
+# ping ip port
+tcping ip port
+
+```
+
+# 服务器搭建zookeeper集群
+
+```
+# zoo.cfg需要添加下面这行，解决ip和端口绑定问题
+quorumListenOnAllIPs=true
+```
+https://blog.csdn.net/u014284000/article/details/74508963
