@@ -141,9 +141,13 @@ quorumListenOnAllIPs=true
 ```
 https://blog.csdn.net/u014284000/article/details/74508963
      
- # 在Linux下安装Python时出现一个错误：zipimport.ZipImportError: can't decompress data; zlib not available
- 
+# 在Linux下安装Python时出现一个错误：
+zipimport.ZipImportError: can't decompress data; zlib not available
+
+## 解决方式：
+```shell
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+```
 
 # python默认版本修改
 ```
