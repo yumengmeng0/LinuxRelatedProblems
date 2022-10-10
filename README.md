@@ -132,14 +132,6 @@ netstat -lunpt
 tcping ip port
 
 ```
-
-# 服务器搭建zookeeper集群
-
-```
-# zoo.cfg需要添加下面这行，解决ip和端口绑定问题
-quorumListenOnAllIPs=true
-```
-https://blog.csdn.net/u014284000/article/details/74508963
      
 # 在Linux下安装Python时出现一个错误：
 zipimport.ZipImportError: can't decompress data; zlib not available
@@ -168,3 +160,33 @@ export PATH=${JAVA_HOME}/bin:$PATH
 # source /etc/profile 使新的环境变量生效
 ```
 
+
+# 查看进程
+```shell
+# 查看所有进程的详细信息
+ps aux
+#查询进程名对应的进程信息。
+ps a | grep 进程名
+```
+
+# 关闭进程
+
+```shell
+#关闭进程。
+kill pid
+# 强制关闭进程
+kill -9 -pid
+# 更加强制关闭进程
+kill -KILL pid
+
+# 当然，我们也可以通过进程名command来关闭进程。执行下面任一指令即可关闭该进程：
+#关闭进程。
+pkill 进程名 
+
+#关闭同一进程组内的所有进程。
+killall 进程名 
+————————————————
+版权声明：本文为CSDN博主「振华OPPO」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_42257666/article/details/124197052
+
+```
