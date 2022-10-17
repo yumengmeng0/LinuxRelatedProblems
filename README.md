@@ -190,3 +190,37 @@ killall 进程名
 原文链接：https://blog.csdn.net/qq_42257666/article/details/124197052
 
 ```
+
+# SQLYog 连接服务器中出现的问题
+
+## 端口3306在Ubuntu服务器上似乎已关闭，SQLYog 2003错误
+
+问题在于服务器仅在内部进行侦听。
+从/etc/mysql/my.cnf删除行bind-address 127.0.0.1解决了该问题。
+较新版本的Ubuntu(≥16.04)在/etc/mysql/mysql.conf.d/mysqld.cnf中可能有此行。
+
+
+## mysql 错误代码1130
+
+解决方法：
+
+1、 改表法：
+可能是你的帐号不允许从远程登陆，只能在localhost。这个时候只要在localhost的那台电脑，登入mysql后，更改 “mysql” 数据库里的 “user” 表里的 “host” 项，从“localhost”改称”%”mysql -u root -p
+
+```shell
+    mysql>use mysql;
+    mysql>update user set host = ‘%’ where user =’root’;
+    mysql>flush privileges;
+    mysql>select host,user from user where user=’root’;
+```
+
+现在就可以连接了！
+
+2、 授权法：
+
+例如，你想root使用root从任何主机连接到mysql服务器的话。GRANT ALL PRIVILEGES ON *.* TO ‘root’@‘%’ IDENTIFIED BY ‘root’ WITH GRANT OPTION;
+
+如果你想允许用户root从ip为192.168.1.3的主机连接到mysql服务器，并使用root作为密码GRANT ALL PRIVILEGES ON *.* TO ‘root’@‘192.168.1.3’ IDENTIFIED BY ‘root’ WITH GRANT OPTION;
+————————————————
+版权声明：本文为CSDN博主「web_15534274656」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/web_15534274656/article/details/126493936
